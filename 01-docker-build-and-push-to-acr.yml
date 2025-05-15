@@ -18,7 +18,7 @@ variables:
 
   # Agent VM image name
 pool:
-  name: "DGC"
+  name: Default
   vmImage: 'ubuntu-latest'
 
 stages:
@@ -28,7 +28,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      name: "DGC"
+      name: Default
       vmImage: $(vmImageName)
     steps:
     - task: Docker@2
