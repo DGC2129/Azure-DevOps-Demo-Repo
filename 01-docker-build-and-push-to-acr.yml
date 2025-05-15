@@ -28,6 +28,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
+      name: "DGC"
       vmImage: "ubuntu-latest"
     steps:
     - task: Docker@2
