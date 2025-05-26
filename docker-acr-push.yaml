@@ -17,7 +17,9 @@ variables:
   tag: '$(Build.BuildId)'
 
   # Agent VM image name
-  vmImageName: 'ubuntu-latest'
+pool:
+  name: Default
+  vmImage: 'ubuntu-latest'
 
 stages:
 - stage: Build
@@ -26,6 +28,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
+      name: Default
       vmImage: $(vmImageName)
     steps:
     - task: Docker@2
